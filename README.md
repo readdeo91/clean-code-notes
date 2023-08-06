@@ -137,8 +137,10 @@ This is the **open-closed principle**. A system or module should be **open for e
 
 **Commands change the state of the system therefore they return void**. **Anything that returns a value, by convention will not change the state of the system**. That way when you see a function that returns a value, you know it’s safe to call it and will leave the system in the same state it was found in. This is a convention to follow, the language doesn’t force it of course. **It will help us keep tracking side effects.**
 
-### DRY principle. Don’t repeat yourself.
-// TODO
+### DRY principle
+DRY stands for Don’t Repeat Yourself. It’s a software development principle with the goal of removing logic duplication.
+For example, writing a function that contains a specific logic and then calling it multiple times in our code is a form of applying the DRY principle.
+More info: https://www.baeldung.com/cs/dry-software-design-principle
 
 ### Comments
 **The purpose of a comment is to explain the purpose if the code can’t explain it’s own purpose.**
