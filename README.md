@@ -45,8 +45,8 @@ Function names should not be nouns, they should be **verbs** because **they do t
 
 ### Level of obstruction
 Every line of a function should be at the same level of obstruction and that should be one below the name. \
-####Example for bad:
-```
+#### Example for bad:
+```java
 WikiPage wikiPage = pageData.getWikiPage(); //High level
 if (wikiPage != null) { //Low level
 ```
@@ -60,15 +60,18 @@ This is how you can find the true object oriented structure of the system you ar
 A function should be **polite**. It should allow the user to **exit early**. The below example is one function call instead of 50 lines of code. It allows you to **understand** this part **in 3 seconds in a very high level**, not at the detailed level. You can look in it to see the details if you want, but it saves you a lot of time if this is enough for you to understand what is happening.
 
 #### Example
-> renderpageWithSetupsAndTearDowns();
-
+```java
+ renderpageWithSetupsAndTearDowns();
+```
 **If statement’s body should be a function call with a nice readable name** that tells you what the function is going to do. \
 Inside **if statement’s parenteses should be a function call too** (applies for **try-catch also**)
 
 #### Example
->if (employeeIsTooOld()) { \
->fireEmployee() \
->}
+```java
+if (employeeIsTooOld()) { \
+fireEmployee() \
+}
+```
 
 ### Function arguments
 #### How many arguments should a function have?
@@ -86,8 +89,9 @@ Keep the number of arguments down to 2-3, use other strategies like data structu
 
 ## Names
 ### Boolean name example
-> **boolean** testPage = **true**;
-
+```java
+ **boolean** testPage = **true**;
+```
 This is an **explanatory variable**, it’s only job is to explain if something is a testpage. To make it look more like “a well written prose” in an if statement, **isTestPage would be a much better name.##
 
 ### Output arguments:
@@ -146,11 +150,15 @@ When you write bad code, don’t comment it, clean it! It is much better to use 
 TODO comments became DONT DO comments when you are checking it in. Noone will ever care about them. If you have TODO comments they must be done or deleted before you open a pull request.
 
 ### Names: Reveal your intent
->int d; // elapsed time in days
+```java
+int d; // elapsed time in days
+```
 
 - A name that requires a comment, does not reveal it’s intent.
 - The name of a variable should tell us the significance of what that variable contains:
->int elapsedTimeInDays;
+```java
+int elapsedTimeInDays;
+```
 
 ### How long should names be?
 A variable name should be proportional to the size of the scope contains it.
