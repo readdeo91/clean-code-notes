@@ -1,5 +1,6 @@
 # Clean code notes
 ### Recommended books:
+Robert C. Martin - **Clean Code: A Handbook of Agile Software Craftsmanship** \
 Kent Beck - **Implementation Patterns** \
 Grady Booch - **Object-Oriented Analysis and Design with Applications** \
 Dan North - **97 Things Every Programmer should Know** \
