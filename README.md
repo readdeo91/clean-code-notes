@@ -5,6 +5,7 @@ Kent Beck - **Implementation Patterns** \
 Grady Booch - **Object-Oriented Analysis and Design with Applications** \
 Dan North - **97 Things Every Programmer should Know** \
 
+### Recommended videos:
 [Clean Code - Uncle Bob / Lesson 1](https://www.youtube.com/watch?v=7EmboKQH8lM) \
 [Clean Code - Uncle Bob / Lesson 2](https://www.youtube.com/watch?v=2a_ytyt9sf8) \
 [ITT 2016 - Kevlin Henney - Seven Ineffective Coding Habits of Many Programmers](https://www.youtube.com/watch?v=ZsHMHukIlJY)
