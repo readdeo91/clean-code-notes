@@ -204,7 +204,7 @@ Code can contain optical illusions. It’s your job, to fight against them.
 
 It’s really hard to see the difference. It is especially easy to look over the difference in the third character in these variable names. Be careful about that.
 
-Number series
+### Number series
 
 The opposite of intentional naming.
 Provide no clue as to the author’s intent.
@@ -222,21 +222,21 @@ public static void copyChars(char source[], char[] destination[]) {
 }
 ```
 
-Noise words
+### Noise words
 
-Suffixes:
+#### Suffixes:
 Product product;
 ProductData pd;
 ProductInfo pi;
 
-Prefixes
+#### Prefixes
 Product aProduct;
 Product theProduct;
 
 
 Data is completely redundant. Why do you need to say it’s data? Of course it’s data. You don’t need to put it there. What is the difference between Product and ProductData? Why is there 3 different objects if there is a Product object anyway? These type names don’t thell you the difference, and this is a problem.
 
-Distinguish names meaningfully
+#### Distinguish names meaningfully
 
 ```java
 Account getActiveAccount();
@@ -250,17 +250,17 @@ How much time should you spend on code review?
 
 If a feature takes 5 hours to complete, than you should take something like 5 hours or maybe less to review it. If you are going to review a module, **you need to walk through the reasoning the author originally went through.** Hopefully the author made it easy for you by refactoring and cleaning up the code but it will still take a significant amount of time to review the code.
 
-Noise in code:
+### Noise in code:
 
-Argument list:
+### Argument list:
 
-Bad:
+#### Bad:
 ```java
 public int howNotToLayoutAMethodHeader(int firstArgument,
     String secondArgument)
 ```
 
-Good:
+#### Good:
 ```java
 public int ensureArgumentsAreLikeThis(
     int firstArgument,
@@ -275,7 +275,7 @@ public int orEnsureArgumentsAreGroupedLikeThis(
 int firstArgument, String secondArgument)
 ```
 
-Bad:
+#### Bad:
 ```java
 public int butNotAlignedLikeThis(int firstArgument,
                                                       String secondArgument)
@@ -283,10 +283,10 @@ public int butNotAlignedLikeThis(int firstArgument,
 
 When we are dealing with a list of parameters than it should look like a list, it should not be scattered around. You can do it horizontally or vertically, but make it look like a list.
 
-Lego naming:
+### Lego naming:
 
-We often dilute the meaning so much, it disappears.
-You have a ManagerController and you would need a proxy for it and a factory and it needs to be abstruct so now you have a: AbstractFactoryProxyManagerController.
+**We often dilute the meaning so much, it disappears.**
+You have a ManagerController and you would need a proxy for it and a factory and it needs to be abstruct so now you have a: **AbstractFactoryProxyManagerController**.
 
 This is not a particularly long name but this is a very good example to demonstrate where it starts when we are adding extra words.
 
@@ -385,8 +385,29 @@ InvalidTypeAccess
 
 There is nothing wrong with NullReference, but dereferencing it is the problem. Name the problem. Name the situation. Don’t name like “It is something to do with arithmetics”, “It is something to do with nulls”. It’s to do with dereferencing so we can actually be much more concrete. 
 
-Underabstraction
+### Underabstraction
 There is a tecnique published in 2009:
 Take your codebase and strip out your comments, strip out string literals, get rid of case sensitivity and put it into a tag cloud generator and see what you can see.
-Example
+
+#### Example
+![](https://github.com/readdeo91/clean-code-notes/blob/main/tagcloud2.png)
+What we see first of all that the language is java. Beside import and public, we see that this system is a system of strings. That’s the dominant type. We also see list and integers and that’s kind of it. So what is this system about? There is no way to tell. This code is a failed attempt of object oriented programming.
+
+![](https://github.com/readdeo91/clean-code-notes/blob/main/tagcloud.png)
+
+This system is much richer: printingDevice, paper, product, testingPrinter. This is so much clearer.
+
+```java
+if (portfolioIdsByTraderId.get(trader.getid())
+    .containsKey(portfolio.getId()))
+```
+The issue is to do with the lack of abstraction.
+
+It’s not entirely clear of what it’s purpose. It’s just doesn’t communicate. It doesn’t fullfill the communication needs of it’s users.
+
+```java
+if (trader.canView(portfolio))
+```
+
+It’s much clearer. This is a permission check. It’s not just a lookup in a map of maps. It is **a technical expression of what is going on.** You can understand what it means. It means that whether or not this trader can view this portfolio.
 
